@@ -1,0 +1,68 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block title %}
+    Login
+{% endblock title %}
+    
+
+{% block content %}
+
+<form action="" method="post">
+
+    {% csrf_token %}
+    <!-- Section: Design Block -->
+      <section class="text-center">
+        
+        <!-- Imagen de fondo -->
+        <div class="p-5 bg-image" style="
+          background-image: url('https://modulor.cl/wp-content/uploads/2018/12/estacionamiento-1.jpg');
+          height: 300px;">
+        </div>
+        <!-- fondo blanco -->
+      
+        <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+              margin-top: -100px;
+              background: #88d4c86e;
+              backdrop-filter: blur(3px);
+              ">
+          <div class="card-body py-5 px-md-5">
+      
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-8">
+                <h1 class="fw-bold mb-5" style="color: black;">Iniciar sesion</h1>
+                <form>
+
+    <main class="container mt-5">
+      
+      {% if mensaje %}
+        <div class="alert alert-danger">{{mensaje}}</div>
+        
+        
+          
+      
+          
+        
+      {% endif %}
+        
+        {% if error %}
+          <div class="alert alert-warning">{{error}}</div>
+        {% endif %}
+          
+        <form action="" method="post" class="mt-5 row g-3 card card-body col-6">
+            
+            <div class="row mt-4">
+                {% csrf_token %}
+                {{formA.as_p}}
+            </div>
+            <div class="text-center">
+                <button class="btn btn-info">Inicia Sesion</button>
+                <a class="btn btn-primary" href="{% url 'registro' %}" role="button">Registrarse</a>
+            </div>
+        
+        </form>
+    </main>
+
+{% endblock content %}
+    

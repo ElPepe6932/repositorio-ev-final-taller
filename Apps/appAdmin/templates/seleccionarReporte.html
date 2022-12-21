@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="display-5 text-center">Reportes</h1>
+    </div>
+    <div class="container mt-5 text-center">
+        <form class="" method="post" action="">
+            {% csrf_token %}
+            <label for="">Desde</label>
+            <input class="" name="desde" type="text" placeholder="Ej: 2022-05-02">
+            <label for="">Hasta</label>
+            <input type="text" name="hasta" placeholder="Ej: 2022-07-02">
+            <button class="btn btn-secondary" type="submit">Buscar</button>
+        </form>
+    </div>
+    <div class="container mt-5">
+        <table class="table table-warning">
+            <thead>
+              <tr class="table-dark">
+                <th scope="col">ID</th>
+                <th scope="col">Username</th>
+                <th scope="col">Fecha y hora de inicio</th>
+                <th scope="col">Fecha y hora de termino</th>
+                <th scope="col">Costo total sin IVA</th>
+                <th scope="col">Nro estacionamiento</th>
+                <th scope="col">Vehiculo</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                {% for dato in reservas %}
+                    
+                <tr>
+                    <th scope="row">{{dato.id}}</th>
+                    <td>{{dato.user.username}}</td>
+                    <td>{{dato.inicio}}</td>
+                    <td>{{dato.termino}}</td>
+                    <td>${{dato.total}}</td>
+                    <td>{{dato.numero.numeroEstacionamiento}}</td>
+                    <td>{{dato.vehiculo.modeloVehiculo}}</td>
+                  </tr>
+
+                {% endfor %}
+                    
+            </tbody>
+          </table>
+          <a href="{% url 'reportesReservas' %}" class="btn btn-primary text-center">Descargar</a>
+    </div>
+{% endblock content %}
+    

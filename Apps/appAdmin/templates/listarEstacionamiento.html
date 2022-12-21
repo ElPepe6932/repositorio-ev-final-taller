@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="display-7 text-center">{{title}}</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group mt-5">
+                    {% for estacionamiento in estacionamientos %}
+
+                    <a class="list-group-item" href="">
+                        <header class="d-flex justify-content-between">
+                            <h2 class="fw-bold" style="text-transform: uppercase;">Estacionamiento</h2>
+                            <p>{{estacionamiento.id}}</p>
+                        </header>
+                        <p>{{estacionamiento.numeroEstacionamiento}}</p>
+                        
+                        {% if estacionamiento.estado == False %}
+                            <p>Estacionamiento disponible</p>
+                        {% else %}
+                            <p>Estacionamiento ocupado</p>
+                        {% endif %}
+                            
+                        
+                        <a  class="btn btn-danger mt-1 mb-5" href=""><i class="bi bi-trash-fill"></i></a> 
+                        
+                                  
+                    </a>
+                    
+                    {% endfor %}  
+                </ul>
+            
+            </div>
+
+        </div>
+    </div>
+{% endblock content %}
+    

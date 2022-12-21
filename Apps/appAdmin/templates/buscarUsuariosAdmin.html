@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+ 
+    <div class="container mt-5">
+        <h1 class="display-5 text-center">Buscar usuarios</h1>
+        <form action="" method="GET" class="text-center" style="width: 280px; margin: 0 auto;">
+            {% csrf_token %}
+            <input name="buscado" class="form-control mt-3" placeholder="Username del usuario" id="usuarios">
+            <button type="submit" class="btn btn-secondary mt-3">Buscar <i class="bi bi-search"></i></button>
+        </form>
+
+            
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group mt-5">
+                    {% for usuario in usuarios %}
+
+                    <a class="list-group-item" href="{% url 'verUsers' usuario.id %}">
+                        <header class="d-flex justify-content-between">
+                            <h2 class="fw-bold" style="text-transform: uppercase;">{{usuario.first_name}}</h2>
+                            <p>{{usuario.id}}</p>
+                        </header>
+                        <p>{{usuario.username}}</p>
+                        <p>{{usuario.rut}}</p>
+                        
+                        {% if usuario.estado == True %}
+                            <a  class="btn btn-warning mt-1 mb-5" href="{% url 'vetarUser' usuario.id %}">Anular el vetado <i class="bi bi-person-lock"></i></a> 
+                             
+                        {% elif usuario.estado == False %}
+
+                            <a  class="btn btn-danger mt-1 mb-5" href="{% url 'anularVetarUser' usuario.id %}">Vetar usuario <i class="bi bi-person-lock"></i></a>
+                        {% endif %}
+                            
+                        
+                        
+                                  
+                    </a>
+                    
+                    {% endfor %}  
+                </ul>
+            
+            </div>
+
+        </div>
+
+    </div>
+{% endblock content %}
+    

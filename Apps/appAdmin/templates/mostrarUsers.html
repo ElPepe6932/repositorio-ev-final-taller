@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="display-5">Datos del usuario</h1>
+        <div class="mt-5 row card card-body col-6">
+            <div class="container mt-3">
+
+                <p>Nombre: {{usuario.username}}</p>
+                <p>Estado del usuario:
+                {% if usuario.estado == False %}
+                Vetado
+                {% else %}
+                No Vetado
+                {% endif %}
+                    </p>
+                <p>RUT Usuario: {{usuario.rut}}</p>
+                <p>Email: {{usuario.email}}</p>
+                
+            </div>
+            <a href="{% url 'buscador' %}" class="btn btn-danger mt-3">Volver</a>
+        </div>
+       
+       
+    </div>
+    
+{% endblock content %}
+    

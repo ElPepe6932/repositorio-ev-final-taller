@@ -1,0 +1,71 @@
+<body>
+    <h1>Reporte de reservas</h1>
+    <p>Cantidad de reservas realizadas: {{count}}</p><hr><br>
+    <table style="text-align: center; border: solid black 1px;">
+        <thead>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Numero de estacionamiento</th>
+            <th>Total a pagar</th>
+            <th>Patente</th>
+        </thead>
+        <tbody>
+            
+            {% for item in lugar %}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.user.username}}</td>
+                    <td>{{item.numero.numeroEstacionamiento}}</td>
+                    <td>{{item.total}}</td>
+                    <td>{{item.vehiculo.patente}}</td>
+                </tr>
+            {% endfor %}
+                
+        </tbody>
+    </table><br>
+    <p>Cantidad de usuarios registrados a la aplicacion {{contaruser}}</p><hr><br>
+    <table border="1" style="text-align: center;">
+        <thead>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Estado del usuario</th>
+            <th>Rut</th>
+        </thead>
+        <tbody>
+            
+            {% for users in user %}
+                <tr>
+                    <td>{{users.id}}</td>
+                    <td>{{users.username}}</td>
+                    <td>{{users.email}}</td>
+                    <td>{{users.estado}}</td>
+                    <td>{{users.rut}}</td>
+                </tr>
+            {% endfor %}
+                
+        </tbody>
+    </table><br>
+
+    <p>Cantidad de usuarios registrados a la aplicacion {{contarestacionamineto}}</p><hr><br>
+    <table border="1" style="text-align: center;">
+        <thead>
+            <th>ID</th>
+            <th>Numero del estacionamiento</th>
+            <th>Estado del estacionamiento</th>
+          
+        </thead>
+        <tbody>
+            
+            {% for p in estacionamiento %}
+                <tr>
+                    <td>{{p.id}}</td>
+                    <td>{{p.numeroEstacionamiento}}</td>
+                    <td>{{p.estado}}</td>
+                </tr>
+            {% endfor %}
+                
+        </tbody>
+    </table>
+
+</body>

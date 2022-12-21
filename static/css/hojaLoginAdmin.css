@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+#contenedor{
+    width: 85%;
+    height: 900px;
+    min-height: 500px;
+    margin: auto;
+}
+
+#layout{
+    margin: auto;
+    height: 90px;
+    background-color:  #2b3e51;
+    margin-top: 0%;
+    display: flex;
+
+}
+#layout a{
+    padding-top: 30px;
+    margin-left: 30px;
+    color: rgb(255, 255, 255);
+    font-size: 21px;
+    display: inline-block;
+    text-decoration: none;
+    
+}
+
+@media only screen and (max-width: 1470px) {
+
+    #layout{
+        margin: auto;
+        height: 90px;
+        background-color:  #2b3e51;
+        margin-top: 0%;
+        display: flex;
+   
+        
+    }
+    #layout a{
+        padding-top: 30px;
+        margin-left: 20px;
+        color: rgb(255, 255, 255);
+        font-size: 21px;
+        
+        text-decoration: none;
+        
+    }
+    
+        
+    }
+
+/*++++++++++++++++++++++++++++++++++++++++++*/
+/* panel admin */
+
+#total{
+    width: 100%;
+    height: 100%;
+}
+
+
+#izquierdo{
+    width: 35%;
+    height: 800px;
+    float: left;
+}
+#derecho{
+    float: right;
+    width: 65%;
+    height: 800px;
+}
+
+#bd-left{
+    width: 97%;
+    height: 380px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+#izquierdo h1{ 
+    font-family: 'Roboto';
+    color: #2b3e51;
+    text-align: center;
+    padding-top: 50px;
+    margin-top: 40%;
+    font-size: 62px;
+    font-weight: 500;
+    padding-bottom: 130px;
+}
+
+#botones{
+    width: 50% ;
+    margin-top: 16.3%;
+    margin-left: 25%;
+}
+
+#botones label{
+    text-decoration: underline;
+    font-size: 20px;
+    padding-left: 25px;
+   
+}
+#botones dir{
+    padding-left: 20px;
+    padding-top: 80px;
+}
+
+
+@media only screen and (max-width: 1468px) {
+    
+#izquierdo h1{ 
+    font-family: 'Roboto';
+    text-align: center;
+    margin-top: 55%;
+    font-size: 56px;
+    font-weight: 500;
+    padding-bottom: 130px;
+}
+#botones{
+    width: 50% ;
+    margin-top: 16.3%;
+    margin-left: 25%;
+}
+
+#botones label{
+    text-decoration: underline;
+    font-size: 16px;
+    padding-left: 25px;
+   
+}
+#botones dir{
+    padding-left: 20px;
+    padding-top: 80px;
+
+}
+    
+}
+/******************************************************************/
+/*CSS DEL ADMIN ESTACIONAMIENTO*/
+#titulo-adm-estacionamiento h1{
+    margin-top: 150px;
+    font-size: 55px;
+    color: #2b3e51;
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+#liberar-estacionamiento{
+    width: 700px;
+    height: 200px;
+    margin: auto;
+    border: solid black;
+}
+#liberar-estacionamiento label{
+    padding-top: 50px;
+    padding-left: 17px;
+    text-decoration: underline;
+    font-size: 23px;
+}
+#liberar-estacionamiento input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 20px;
+    margin-right: 45px;
+    margin-left: 17px;
+    width: 290px;
+    height: 40px;
+    outline: none;
+}
+/***************************************/
+#ocupado-estacionamiento{
+    width: 700px;
+    height: 200px;
+    margin: auto;
+    border: solid black;
+}
+#ocupado-estacionamiento label{
+    padding-top: 50px;
+    padding-left: 17px;
+    text-decoration: underline;
+    font-size: 23px;
+}
+#ocupado-estacionamiento input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 20px;
+    margin-right: 45px;
+    margin-left: 17px;
+    width: 290px;
+    height: 40px;
+    outline: none;
+    
+}
+@media only screen and (max-width: 1468px) {
+    #contenedor{
+        width: 85%;
+        height: 610px;
+        min-height: 500px;
+        margin: auto;
+    }
+    #titulo-adm-estacionamiento h1{
+        margin-top: 100px;
+        font-size: 40px;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    
+    #liberar-estacionamiento{
+        width: 600px;
+        height: 160px;
+        margin: auto;
+        border: solid black;
+    }
+    #liberar-estacionamiento label{
+        padding-top: 30px;
+        padding-left: 17px;
+        text-decoration: underline;
+        font-size: 23px;
+    }
+    #liberar-estacionamiento input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        margin-top: 20px;
+        margin-right: 45px;
+        margin-left: 17px;
+        width: 290px;
+        height: 40px;
+        outline: none;
+    }
+    /***************************************/
+    #ocupado-estacionamiento{
+        width: 600px;
+        height: 160px;
+        margin: auto;
+        border: solid black;
+    }
+    #ocupado-estacionamiento label{
+        padding-top: 30px;
+        padding-left: 17px;
+        text-decoration: underline;
+        font-size: 23px;
+    }
+    #ocupado-estacionamiento input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        margin-top: 20px;
+        margin-right: 45px;
+        margin-left: 17px;
+        width: 290px;
+        height: 40px;
+        outline: none;
+    }
+    #layout a{
+        font-size: 14px;
+        display: inline-block;
+        text-decoration: none;
+        font-weight:bolder;
+    }
+    
+    }
+
+/*************************************/
+/*Vetar Usuario*/
+
+#tutulo-vetar-usuario h1{
+    font-size: 55px;
+    text-align: center;
+    margin-top: 155px;
+    margin-bottom: 100px;
+}
+/*********************************************/
+#vetar-usuario{
+    width: 700px;
+    height: 200px;
+    margin: auto;
+    border: solid black;
+    border-radius: 20px;
+}
+#vetar-usuario label{
+    padding-top: 50px;
+    padding-left: 17px;
+    text-decoration: underline;
+    font-size: 23px;
+}
+#vetar-usuario input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 20px;
+    margin-right: 45px;
+    margin-left: 17px;
+    width: 290px;
+    height: 40px;
+    outline: none;   
+}
+/****************************************/
+#des-vetar-usuario{
+    width: 700px;
+    height: 200px;
+    margin: auto;
+    border-radius: 20px;
+    border: solid black;
+}
+#des-vetar-usuario label{
+    padding-top: 50px;
+    padding-left: 17px;
+    text-decoration: underline;
+    font-size: 20px;
+}
+#des-vetar-usuario input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 20px;
+    margin-right: 45px;
+    margin-left: 17px;
+    width: 290px;
+    height: 40px;
+    outline: none;
+    
+}
+/************************************************************/
+
+/*Generar Reportes*/
+
+/***************************************************************/
+
+.titulo-gen-report h1{
+    text-align: center;
+    margin-top: 155px;
+    font-size: 55px;
+    
+}
+
+#report-mes{
+    border: solid black 1px;
+    width: 16%;
+    height: 150px;
+    margin-top: 130px;
+    border-radius: 20px;
+    margin-left: 270px;
+}
+
+#report-mes label{
+    padding-top: 40px;
+    text-decoration: underline;
+    font-size: 17px;
+    margin-left: 18px;
+}
+#report-mes select{
+    width: 70%;
+    margin-top: 20px;
+    height: 35px;
+    margin-left: 18px;
+}
+#table-data-base{
+
+    width: 50%;
+    height: 500px;
+    
+    margin-left: 650px;
+    margin-top:-149px;
+}

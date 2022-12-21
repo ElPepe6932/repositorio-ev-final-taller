@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/hojaLoginAdmin.css' %}">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+      <!-- BARRA NAVEGACIÓN -->
+      <div class="bg-light">
+        <nav class="navbar navbar-expand-md navbar-light bg-light border-3 border-bottom border-warning">
+            <div class="container-fluid">
+                <button type="button"
+                    class="navbar-toggler"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#MenuNavegacion">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+
+            <div id="MenuNavegacion" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'InicioAdmin' %}">Inicio</a>
+                    </li>
+                    &nbsp;
+                    <li class="nav-item">
+                        <a class="nav-link text-nowrap" href="{% url 'adEstacionamiento' %}">Grafico</a>
+                    </li>
+                    &nbsp;
+                    <li class="nav-item">
+                        <a class="nav-link text-nowrap" href="{% url 'seleccionarReportes' %}">Reporte</a>
+                    </li>
+                    &nbsp;
+                    <li class="nav-item">
+                        <a class="nav-link text-nowrap" href="{% url 'buscador' %}">Buscar usuario</a>
+                    </li>
+                    &nbsp;
+                    <li class="nav-item">
+                        <a class="nav-link text-nowrap" href="{% url 'crearEstacionamiento' %}">Agregar estacionamiento</a>
+                    </li>
+                    &nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                          </svg>&nbsp;&nbsp;{{ user.username }}
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                      <li><a class="dropdown-item" href="#">¿Como funcionamos?</a></li>
+                      <li><a class="dropdown-item" href="#">Soporte</a></li>
+                      <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesion</a></li>
+                      </ul>&nbsp;&nbsp;&nbsp;
+
+
+                    
+                </ul>
+                
+            </div>
+        </nav>
+    </div>
+
+    <!-- # --------------------------------------------------------------------------------------------------------------------- -->
+<!-- 
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2b3e51;">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'InicioAdmin' %}">Inicio</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'adEstacionamiento' %}">Administrar estacionamiento |</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'seleccionarReportes' %}">Generar reportes |</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'buscador' %}"> Usuarios |</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'crearEstacionamiento' %}">Agregar estacionamiento |</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'logout' %}">Cerrar sesión |</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> -->
+  
+        
+      
+        
+      
+
+   
+    
+       
+        {% block content %}
+        <!------Codigo que viene de templates------>
+        
+        {% endblock %}
+  
+</body>
+</html>

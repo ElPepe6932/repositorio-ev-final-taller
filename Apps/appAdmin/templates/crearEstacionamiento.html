@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container mt-5 ">
+    <h1 class="display-5 text-center">Agregar nuevo estacionamiento</h1>
+    <div class="row">
+        <div class="col-md-5" style="margin: 0 auto;">
+            <form action="" method="post" class="card card-body mt-5"> 
+                {% csrf_token %}
+                {{formEstacionamiento.as_p}}
+               <button class="btn btn-secondary" style="background-color: #2b3e51;">Guardar nuevo estacionamiento</button>
+            </form>  
+
+            
+
+        </div>            
+    </div>
+    <div class="text-center mt-5">
+        <a href="{% url 'EstDisponible' %}" class="btn btn-primary">Listar estacionamientos diponibles</a>       
+        <a href="{% url 'EstNoDisponible' %}" class="btn btn-danger">Listar estacionamientos No diponibles</a>      
+    </div>
+           
+</div>
+    
+{% endblock content %}
+    

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+{% load humanize %}
+
+
+<div class="container mt-5 " style="margin: center;">
+    <div class="row justify-content-md-center">
+        <div class="col-5 ">
+        <div class="card card-body text-center" >
+            <H1 class="text-center">Boleta</H1>
+            <hr>
+            <p> <h6>Nombre usuario: </h6>{{ termino.user.username }}</p>
+            <p> <h6>Correo electronico:</h6> {{ termino.user.email }}</p>
+            <p> <h6>Rut : </h6>{{ termino.user.rut }}</p>
+            <p> {{ termino.numero}}</p>
+            <p> {{ termino.vehiculo}}</p>
+            <p> <h6>Inicio Reserva:</h6>{{ termino.inicio }}</p>
+            <p> <h6>Fin Reserva: </h6>{{ termino.termino }}</p>
+
+            <hr>
+            <p> <h6>Total: </h6>{{ total_pagar }}</p>
+
+
+
+
+        </div>
+        <br>
+        <div class="text-center">
+        
+            <a class="btn btn-primary btn-lg"   href="{% url 'termino' termino.numero.id termino.id %}">Volver al inicio</a>
+           
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

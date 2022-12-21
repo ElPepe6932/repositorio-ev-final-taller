@@ -1,0 +1,157 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+
+<br><br><br>
+    <main role="main">
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+        </ol>
+        <div class="carousel-inner">
+          
+          <div class="carousel-item">
+            <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>One more for good measure.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+       
+
+
+        <!-- START THE FEATURETTES -->
+
+    
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Bienvenido a nuestro sistema de reservas. <span class="text-muted">Disminuye tu tiempo de espera.</span></h2>
+            <p class="lead">Cumplimos con un sistema en el cual puedes ver estacionamientos disponibles desde cualquier lado y reservarlos al instante, para asi aprovechar tu tiempo al maximo y no tengas que dar esas odiosas vueltas buscando un lugar.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="{% static 'images/imagen1.jpg' %}" data-holder-rendered="true">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Sistema de cobro. <span class="text-muted">Paga dedsde cualquier lado.</span></h2>
+            <p class="lead">El sistema de cobro es muy sencillo ya que al momento de realizar la reserva empiezan a correr los minutos los cuales son cobrados previamente termine la reserva, mediante transbank proximamente cualquier medio de pago.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="{% static 'images/imagen2.png' %}" data-holder-rendered="true" style="width: 500px; height: 500px;">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Pagina <span class="text-muted">Es super sencillo.</span></h2>
+            <p class="lead">Contamos con un sistema muy sencillo de ver y utilizar tanto como para el usuario que quiera generar la reserva como para el administrador del estacionamiento que sea llamado.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="{% static 'images/imagen3.jpg' %}" data-holder-rendered="true" style="width: 750px; height: 500px;">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+
+      <!-- FOOTER -->
+     
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+  
+
+<script>
+		var returnedSuggestion = ''
+		let editor, doc, cursor, line, pos
+		document.addEventListener("keydown", (event) => {
+		setTimeout(()=>{
+			editor = event.target.closest('.CodeMirror');
+			if (editor){
+				doc = editor.CodeMirror.getDoc()
+				cursor = doc.getCursor()
+				line = doc.getLine(cursor.line)
+				pos = {line: cursor.line, ch: line.length}
+				if (event.key == "Enter"){
+					var query = doc.getRange({ line: Math.max(0,cursor.line-10), ch: 0 }, { line: cursor.line, ch: 0 })
+					window.postMessage({source: 'getSuggestion', payload: { data: query } } )
+					//displayGrey(query)
+				}
+				else if (event.key == "ArrowRight"){
+					acceptTab(returnedSuggestion)
+				}
+			}
+		}, 0)
+		})
+
+		function acceptTab(text){
+		if (suggestionDisplayed){
+			doc.replaceRange(text, pos)
+			suggestionDisplayed = false
+		}
+		}
+		function displayGrey(text){
+		var element = document.createElement('span')
+		element.innerText = text
+		element.style = 'color:grey'
+		var lineIndex = pos.line;
+		editor.getElementsByClassName('CodeMirror-line')[lineIndex].appendChild(element)
+		suggestionDisplayed = true
+		}
+		window.addEventListener('message', (event)=>{
+		if (event.source !== window ) return
+		if (event.data.source == 'return'){
+			returnedSuggestion = event.data.payload.data
+			displayGrey(event.data.payload.data)
+		}
+		})
+	</script><svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body>
+{% endblock %}
