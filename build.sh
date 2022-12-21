@@ -3,7 +3,7 @@
 set -o errexit
 
 # poetry install
-pip install requirements
+# pip install requirements
 
 python manage.py collectstatic --no-input
 python manage.py migrate
